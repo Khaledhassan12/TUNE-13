@@ -31,7 +31,7 @@ import androidx.compose.material.icons.rounded.AlternateEmail
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.rounded.Chat
 import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Facebook
+import androidx.compose.material.icons.rounded.Public
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
@@ -234,7 +234,7 @@ fun KhaLedHassanScreen(
                     )
                     ContactDivider()
                     ContactRow(
-                        icon = { Icon(Icons.Rounded.Facebook, contentDescription = null) },
+                        icon = { Icon(Icons.Rounded.Public, contentDescription = null) },
                         title = "Facebook",
                         detail = "facebook.com/Khaledabdulsadiq12",
                         onClick = {
