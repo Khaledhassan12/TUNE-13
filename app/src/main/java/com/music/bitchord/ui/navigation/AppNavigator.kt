@@ -17,6 +17,8 @@ import com.music.bitchord.ui.screens.SettingsChoiceKind
  */
 sealed interface AppRoute {
     data object Settings : AppRoute
+    /** Personal profile page, reachable only from its explicit Settings row. */
+    data object KhaLedHassan : AppRoute
     data object AccountScrobbling : AppRoute
     data object Sources : AppRoute
     data object ListenTogether : AppRoute
