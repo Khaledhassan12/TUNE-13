@@ -186,6 +186,7 @@ import com.music.bitchord.ui.screens.ListenTogetherScreen
 import com.music.bitchord.ui.screens.PartyServerEditor
 import com.music.bitchord.ui.screens.SignatureApiEditor
 import com.music.bitchord.ui.screens.SettingsScreen
+import com.music.bitchord.ui.screens.KhaLedHassanScreen
 import com.music.bitchord.ui.screens.SourceEditorAlert
 import com.music.bitchord.ui.screens.SourcesScreen
 import com.music.bitchord.data.sources.TrackMatcher
@@ -2946,7 +2947,9 @@ private fun BitChordApp(
                         detailListStates.getOrPut(key) { LazyListState() }
                     }
                     val pageContent: @Composable () -> Unit = {
-                        if (pageRoute == AppRoute.History) {
+                        if (pageRoute == AppRoute.KhaLedHassan) {
+                            KhaLedHassanScreen(contentPadding = listPadding)
+                        } else if (pageRoute == AppRoute.History) {
                             HistoryScreen(
                                 state = historyState,
                                 listState = historyListState,
@@ -3137,6 +3140,7 @@ private fun BitChordApp(
                                 onSpotifyCanvasAuth = { showSpotifyCanvasAuth = true },
                                 onAppLanguage = { showAppLanguage = true },
                                 onEditSignatureApi = { editingSignatureApi = true },
+                                onOpenKhaLedHassan = { navigator.push(AppRoute.KhaLedHassan) },
                                 onConfirmBitPerfect = { confirmBitPerfect = it },
                                 onConfirmFixedVolume = { confirmFixedVolume = true },
                                 contentPadding = listPadding,
