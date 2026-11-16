@@ -223,6 +223,8 @@ fun SettingsScreen(
     onOpenSection: (SettingsCategory) -> Unit = {},
     /** Opens a choice with more options than its row can show, as a page. */
     onOpenChoice: (SettingsChoiceKind) -> Unit = {},
+    /** Opens the developer profile page from its dedicated Settings row. */
+    onOpenKhaLedHassan: () -> Unit = {},
 ) {
     val context = LocalContext.current
 
@@ -495,6 +497,21 @@ fun SettingsScreen(
                         } ?: stringResource(R.string.listen_together_subtitle),
                         badge = party.members.size.takeIf { party.inParty && it > 1 }?.toString(),
                         onClick = onListenTogether,
+                    )
+                }
+                val developerProfileTitle = "Kha Led Hassan"
+                row(developerProfileTitle, "developer", "profile", "khaled hassan") {
+                    SettingsRow(
+                        title = developerProfileTitle,
+                        iconContent = {
+                            AsyncImage(
+                                model = "file:///android_asset/button_logo.png",
+                                contentDescription = null,
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.size(ICON_SIZE).clip(CircleShape),
+                            )
+                        },
+                        onClick = onOpenKhaLedHassan,
                     )
                 }
             }
