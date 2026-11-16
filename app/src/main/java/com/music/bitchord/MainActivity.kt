@@ -549,6 +549,9 @@ private fun BitChordApp(
     // and the page is a sibling of the bar rather than a child.
     val navBarScroll = rememberFloatingTabBarScrollConnection()
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
+    // The profile screen owns a large in-list heading; the shared top bar
+    // takes over its small title only after that heading scrolls away.
+    var khaLedHassanScrolled by rememberSaveable { mutableStateOf(false) }
     // Explore loads the first time it's shown, not at launch beside Home.
     LaunchedEffect(selectedTab) {
         if (selectedTab == TAB_EXPLORE) viewModel.onExploreShown()
@@ -2948,7 +2951,14 @@ private fun BitChordApp(
                     }
                     val pageContent: @Composable () -> Unit = {
                         if (pageRoute == AppRoute.KhaLedHassan) {
-                            KhaLedHassanScreen(contentPadding = listPadding)
+                            KhaLedHassanScreen(
+                                contentPadding = listPadding,
+                                onStart = {
+                                    khaLedHassanScrolled = false
+                                    navigator.pop()
+                                },
+                                onScrolled = { khaLedHassanScrolled = it },
+                            )
                         } else if (pageRoute == AppRoute.History) {
                             HistoryScreen(
                                 state = historyState,
@@ -3802,6 +3812,7 @@ private fun BitChordApp(
                         AppRoute.WearOs -> stringResource(R.string.wear_os_page_title)
                         AppRoute.Equalizer -> stringResource(R.string.equalizer)
                         AppRoute.Settings -> stringResource(R.string.settings)
+                        AppRoute.KhaLedHassan -> "Kha Led Hassan"
                         is AppRoute.SettingsSection -> stringResource(route.category.title)
                         is AppRoute.SettingsChoice -> stringResource(route.choice.title)
                         AppRoute.EqualizerPresets -> stringResource(R.string.equalizer_preset)
@@ -3828,6 +3839,7 @@ private fun BitChordApp(
                             // The page leads with its own large "Replay", so the bar
                             // stays out of the way until that has been scrolled off.
                             route == AppRoute.Replay -> replayScrolled
+                            route == AppRoute.KhaLedHassan -> khaLedHassanScrolled
                             route != null -> true
                             detail != null && detailActiveShelf != null -> true
                             detail != null -> detailScrolled
