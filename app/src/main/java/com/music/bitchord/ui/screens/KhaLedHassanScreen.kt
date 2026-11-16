@@ -97,7 +97,7 @@ fun KhaLedHassanScreen(
     LaunchedEffect(scrollState) {
         snapshotFlow { scrollState.value > 28 }
             .distinctUntilChanged()
-            .collect(onScrolled)
+            .collect { isScrolled -> onScrolled(isScrolled) }
     }
 
     val pageBackground = MaterialTheme.colorScheme.background
@@ -394,6 +394,11 @@ private fun ProfileReveal(
         animationSpec = if (reduceAnimations) tween(0) else tween(620, delayMillis = delayMillis),
         label = "profileRevealAlpha",
     )
+    val scale by animateFloatAsState(
+        targetValue = if (started || reduceAnimations) 1f else 0.985f,
+        animationSpec = if (reduceAnimations) tween(0) else tween(620, delayMillis = delayMillis),
+        label = "profileRevealScale",
+    )
     val translateY by animateFloatAsState(
         targetValue = if (started || reduceAnimations) 0f else 18f,
         animationSpec = if (reduceAnimations) tween(0) else tween(620, delayMillis = delayMillis),
@@ -403,6 +408,8 @@ private fun ProfileReveal(
         modifier = Modifier.graphicsLayer {
             this.alpha = alpha
             translationY = translateY
+            scaleX = scale
+            scaleY = scale
         },
     ) {
         content()
