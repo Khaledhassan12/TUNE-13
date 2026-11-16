@@ -34,6 +34,7 @@ import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Public
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -81,6 +82,7 @@ private const val FACEBOOK_URL = "https://www.facebook.com/Khaledabdulsadiq12"
  * Uses the app's live Material theme and typography, and deliberately contains
  * no duplicated project-origin or third-party ownership notice.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun KhaLedHassanScreen(
     contentPadding: PaddingValues,
