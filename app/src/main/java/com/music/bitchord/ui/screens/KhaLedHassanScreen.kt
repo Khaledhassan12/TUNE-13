@@ -337,7 +337,7 @@ private fun ProfileContactIcon(assetName: String) {
         ),
         contentDescription = null,
         modifier = Modifier.size(24.dp),
-        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimaryContainer),
+        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurface),
     )
 }
 
@@ -359,8 +359,8 @@ private fun ContactRow(
         Surface(
             modifier = Modifier.size(46.dp),
             shape = RoundedCornerShape(15.dp),
-            color = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            color = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface,
         ) {
             Box(contentAlignment = Alignment.Center) { icon() }
         }
