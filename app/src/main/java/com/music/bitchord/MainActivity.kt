@@ -2955,7 +2955,11 @@ private fun BitChordApp(
                                 contentPadding = listPadding,
                                 onStart = {
                                     khaLedHassanScrolled = false
-                                    navigator.pop()
+                                    // Start Tune 13 exits the profile and every Settings route
+                                    // to return to the normal music-browsing Home tab.
+                                    navigator.clear()
+                                    viewModel.closeMoodGenre()
+                                    selectedTab = TAB_HOME
                                 },
                                 onScrolled = { khaLedHassanScrolled = it },
                             )
