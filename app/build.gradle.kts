@@ -105,7 +105,9 @@ android {
 
     splits {
         abi {
-            isEnable = true
+            // The CI debug-only workflow opts into a single universal APK.
+            // Normal local/release builds retain the existing ABI split outputs.
+            isEnable = providers.gradleProperty("bitchord.universalDebugOnly").orNull != "true"
             reset()
             include("armeabi-v7a", "arm64-v8a", "x86_64")
             isUniversalApk = true
