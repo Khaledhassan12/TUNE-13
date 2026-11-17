@@ -7,6 +7,7 @@ import android.net.Uri
 import android.widget.Toast
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -27,11 +28,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.AlternateEmail
-import androidx.compose.material.icons.rounded.Call
-import androidx.compose.material.icons.rounded.Chat
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Public
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -56,6 +52,7 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
@@ -67,6 +64,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
+import coil3.compose.rememberAsyncImagePainter
 import com.music.bitchord.data.settings.AppSettings
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.collect
@@ -215,7 +213,7 @@ fun KhaLedHassanScreen(
             ) {
                 Column {
                     ContactRow(
-                        icon = { Icon(Icons.Rounded.Email, contentDescription = null) },
+                        icon = { ProfileContactIcon("profile_email.svg") },
                         title = "Email",
                         detail = CONTACT_EMAIL,
                         onClick = {
@@ -227,7 +225,7 @@ fun KhaLedHassanScreen(
                     )
                     ContactDivider()
                     ContactRow(
-                        icon = { Icon(Icons.Rounded.Chat, contentDescription = null) },
+                        icon = { ProfileContactIcon("profile_whatsapp.svg") },
                         title = "WhatsApp",
                         detail = CONTACT_PHONE,
                         onClick = {
@@ -236,7 +234,7 @@ fun KhaLedHassanScreen(
                     )
                     ContactDivider()
                     ContactRow(
-                        icon = { Icon(Icons.Rounded.Public, contentDescription = null) },
+                        icon = { ProfileContactIcon("profile_facebook.svg") },
                         title = "Facebook",
                         detail = "facebook.com/Khaledabdulsadiq12",
                         onClick = {
@@ -245,7 +243,7 @@ fun KhaLedHassanScreen(
                     )
                     ContactDivider()
                     ContactRow(
-                        icon = { Icon(Icons.Rounded.AlternateEmail, contentDescription = null) },
+                        icon = { ProfileContactIcon("profile_message.svg") },
                         title = "Direct messages or call",
                         detail = "Message or call me directly",
                         onClick = { showDirectActions = true },
@@ -302,7 +300,7 @@ fun KhaLedHassanScreen(
                     modifier = Modifier.padding(bottom = 14.dp),
                 )
                 ContactRow(
-                    icon = { Icon(Icons.Rounded.Chat, contentDescription = null) },
+                    icon = { ProfileContactIcon("profile_sms.svg") },
                     title = "Send a text message",
                     detail = CONTACT_PHONE,
                     onClick = {
@@ -315,7 +313,7 @@ fun KhaLedHassanScreen(
                 )
                 ContactDivider()
                 ContactRow(
-                    icon = { Icon(Icons.Rounded.Call, contentDescription = null) },
+                    icon = { ProfileContactIcon("profile_call.svg") },
                     title = "Call",
                     detail = CONTACT_PHONE,
                     onClick = {
@@ -329,6 +327,18 @@ fun KhaLedHassanScreen(
             }
         }
     }
+}
+
+@Composable
+private fun ProfileContactIcon(assetName: String) {
+    Image(
+        painter = rememberAsyncImagePainter(
+            model = "file:///android_asset/profile-icons/$assetName",
+        ),
+        contentDescription = null,
+        modifier = Modifier.size(24.dp),
+        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimaryContainer),
+    )
 }
 
 @Composable
@@ -347,10 +357,10 @@ private fun ContactRow(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Surface(
-            modifier = Modifier.size(42.dp),
-            shape = CircleShape,
-            color = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface,
+            modifier = Modifier.size(46.dp),
+            shape = RoundedCornerShape(15.dp),
+            color = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
         ) {
             Box(contentAlignment = Alignment.Center) { icon() }
         }
