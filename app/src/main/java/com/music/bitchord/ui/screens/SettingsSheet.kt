@@ -507,8 +507,11 @@ fun SettingsScreen(
                             AsyncImage(
                                 model = "file:///android_asset/button_logo.png",
                                 contentDescription = null,
-                                contentScale = ContentScale.Crop,
-                                modifier = Modifier.size(ICON_SIZE).clip(CircleShape),
+                                contentScale = ContentScale.Fit,
+                                modifier = Modifier
+                                    .size(ICON_SIZE)
+                                    .scale(1.45f)
+                                    .clip(CircleShape),
                             )
                         },
                         onClick = onOpenKhaLedHassan,
