@@ -2,7 +2,9 @@ name: Debug APK
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - 'perf/**'
   workflow_dispatch:
 
 permissions:
