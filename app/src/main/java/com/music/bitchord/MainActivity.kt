@@ -2895,7 +2895,10 @@ private fun BitChordApp(
                         if (tabSwap || libraryShowAllSwap) {
                             EnterTransition.None togetherWith ExitTransition.None
                         } else {
-                            fadeIn(tween(180)) togetherWith fadeOut(tween(180))
+                            // Keep the incoming page responsive: do not render two full
+                            // Compose trees throughout a crossfade. The outgoing page is
+                            // removed immediately; only the incoming page gets a short fade.
+                            fadeIn(tween(90)) togetherWith ExitTransition.None
                         }
                     },
                     modifier = Modifier
