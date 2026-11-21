@@ -1,10 +1,11 @@
 # Maintainers
 
-This document lists the maintainers responsible for BitChord.
+This document lists the maintainers responsible for TUNE 13.
 
 | Maintainer | GitHub | Responsibilities |
 |---|---|---|
-| Kushagra Singh | [@kushagrasinghx](https://github.com/kushagrasinghx) | Project creator, core architecture, release management, and PR reviews |
+| Khaled Hassan | [@Khaledhassan12](https://github.com/Khaledhassan12) | TUNE 13 maintainer, fork development, project direction, and release management |
+| Kushagra Singh | [@kushagrasinghx](https://github.com/kushagrasinghx) | Original BitChord creator and upstream maintainer; credited for the upstream project |
 
 ## Responsibilities
 

@@ -1,6 +1,6 @@
-# BitChord TV
+# TUNE 13 TV
 
-Android TV / Google TV build of BitChord: a remote-first Compose-for-TV interface
+Android TV / Google TV build of TUNE 13: a remote-first Compose-for-TV interface
 (home, library, search, settings, a full-screen now-playing view with synced
 lyrics, display refresh-rate switching, spatial audio, and QR-code sign-in).
 

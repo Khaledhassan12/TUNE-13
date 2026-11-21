@@ -159,11 +159,11 @@ android {
         create("dev") {
             dimension = "env"
             applicationId = "com.dev.bitchord.tv"
-            resValue("string", "app_name", "BitChord TV")
+            resValue("string", "app_name", "TUNE 13 TV")
         }
         create("prod") {
             dimension = "env"
-            resValue("string", "app_name", "BitChord TV")
+            resValue("string", "app_name", "TUNE 13 TV")
         }
     }
 
