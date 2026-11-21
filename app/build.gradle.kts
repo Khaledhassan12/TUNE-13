@@ -536,7 +536,14 @@ tasks.matching { it.name == "installDevDebug" }.configureEach { finalizedBy(veri
  */
 abstract class BundleWearApk : DefaultTask() {
     @get:InputFiles
+    @get:PathSensitive(PathSensitivity.NAME_ONLY)
     abstract val apks: ConfigurableFileCollection
+
+    @get:Input
+    abstract val targetFlavor: Property<String>
+
+    @get:Input
+    abstract val targetBuildType: Property<String>
 
     @get:OutputDirectory
     abstract val outputDir: DirectoryProperty
@@ -546,8 +553,22 @@ abstract class BundleWearApk : DefaultTask() {
         val out = outputDir.get().asFile.resolve("wear")
         out.deleteRecursively()
         out.mkdirs()
-        val apk = apks.asFileTree.matching { include("*.apk") }.files.singleOrNull()
-            ?: throw GradleException("Expected exactly one watch APK in ${apks.files}")
+        val flavor = targetFlavor.get()
+        val type = targetBuildType.get()
+
+        val allApks = apks.asFileTree.matching { include("**/*.apk") }.files
+        val matchingApks = allApks.filter { file ->
+            val path = file.absolutePath.lowercase()
+            path.contains(flavor.lowercase()) && path.contains(type.lowercase())
+        }
+
+        val apk = when {
+            matchingApks.size == 1 -> matchingApks.single()
+            matchingApks.isNotEmpty() -> matchingApks.maxByOrNull { it.lastModified() } ?: matchingApks.first()
+            allApks.size == 1 -> allApks.single()
+            allApks.isNotEmpty() -> allApks.maxByOrNull { it.lastModified() } ?: allApks.first()
+            else -> throw GradleException("Expected watch APK for flavor '$flavor' and build type '$type' in wearos/build/outputs/apk, but found 0.")
+        }
         val target = out.resolve("BitChordWear.apk")
         apk.copyTo(target, overwrite = true)
         val digest = MessageDigest.getInstance("SHA-256")
@@ -564,15 +585,19 @@ abstract class BundleWearApk : DefaultTask() {
 }
 
 if (providers.gradleProperty("bitchord.bundleWear").orNull != "false" && findProject(":wearos") != null) {
+    evaluationDependsOn(":wearos")
     androidComponents.onVariants { variant ->
         val flavor = variant.productFlavors.firstOrNull { it.first == "env" }?.second ?: return@onVariants
         val type = variant.buildType ?: return@onVariants
         // The benchmark build has no watch counterpart.
         if (type != "debug" && type != "release") return@onVariants
         val cap = variant.name.replaceFirstChar { it.uppercase() }
+        val wearAssemble = project(":wearos").tasks.named("assemble$cap")
         val bundle = tasks.register<BundleWearApk>("bundleWearApk$cap") {
-            dependsOn(":wearos:assemble$cap")
-            apks.from(rootProject.layout.projectDirectory.dir("wearos/build/outputs/apk/$flavor/$type"))
+            dependsOn(wearAssemble)
+            apks.from(project(":wearos").layout.buildDirectory.dir("outputs/apk"))
+            targetFlavor.set(flavor)
+            targetBuildType.set(type)
         }
         variant.sources.assets?.addGeneratedSourceDirectory(bundle, BundleWearApk::outputDir)
     }
