@@ -73,6 +73,7 @@ private const val CONTACT_EMAIL = "Khaled.hassansadik@gmail.com"
 private const val CONTACT_PHONE = "+201119523317"
 private const val WHATSAPP_URL = "https://wa.me/201119523317"
 private const val FACEBOOK_URL = "https://www.facebook.com/Khaledabdulsadiq12"
+private const val GITHUB_URL = "https://github.com/Khaledhassan12"
 
 /**
  * Personal profile, opened only from Settings > Kha Led Hassan.
@@ -239,6 +240,18 @@ fun KhaLedHassanScreen(
                         detail = "facebook.com/Khaledabdulsadiq12",
                         onClick = {
                             launchContactIntent(context, Intent(Intent.ACTION_VIEW, Uri.parse(FACEBOOK_URL)))
+                        },
+                    )
+                    ContactDivider()
+                    ContactRow(
+                        icon = { ProfileContactIcon("profile_github.svg") },
+                        title = "GitHub",
+                        detail = "github.com/Khaledhassan12",
+                        onClick = {
+                            launchContactIntent(
+                                context,
+                                Intent(Intent.ACTION_VIEW, Uri.parse(GITHUB_URL)),
+                            )
                         },
                     )
                     ContactDivider()
