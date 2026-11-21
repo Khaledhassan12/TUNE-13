@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="analysis_complete">اكتمل التحليل</string>
+    <string name="analysis_in_progress">بيتم التحليل…</string>
+    <string name="analysis_refining">اكتمل التحليل، بنحسّنه…</string>
+    <string name="audio_output">مخرج الصوت</string>
+    <string name="audio_output_playing">بيشتغل هنا</string>
+    <string name="audio_pipeline">مسار الصوت</string>
+    <string name="automix_analysis_status">Automix · الأغنية دي: %1$s · اللي بعدها: %2$s</string>
+    <string name="automix_not_supported_video">Automix مش بيدعم أغاني الفيديو</string>
+    <string name="best_part">أحلى جزء</string>
+    <string name="best_part_description">انطّ لأحلى جزء في الأغنية</string>
+    <string name="automix_stopped_in_party">Automix وقف في جلسة الاستماع مع بعض</string>
+    <string name="autoplay">التشغيل التلقائي</string>
+    <string name="autoplay_empty_description">الموسيقى اللي شبه دي هتفضل شغّالة</string>
+    <string name="autoplay_off">التشغيل التلقائي متوقف</string>
+    <string name="autoplay_on">التشغيل التلقائي شغّال</string>
+    <string name="autoplay_queue_description">موسيقى شبه دي، مختارة عشان تشتغل بعد كده</string>
+    <string name="bit_depth">%1$d بت</string>
+    <string name="cancel">إلغاء</string>
+    <string name="cast">بث</string>
+    <string name="cast_casting">بيتم البث</string>
+    <string name="cast_connecting">بيتم الاتصال…</string>
+    <string name="cast_row_subtitle">أجهزة Chromecast وسماعات Google Cast</string>
+    <string name="watch_output">الساعة</string>
+    <string name="watch_output_subtitle">شغّل على سماعة ساعتك أو سماعات الرأس</string>
+    <string name="channel_count">%1$d قناة</string>
+    <string name="choose_lyrics_provider">اختار مصدر الكلمات</string>
+    <string name="clear">مسح</string>
+    <string name="close_lyrics">إغلاق الكلمات</string>
+    <string name="data_saver">توفير البيانات</string>
+    <string name="decrease_lyrics_offset">تأخير الكلمات أقل</string>
+    <string name="downgraded_from">↓ بدل %1$s</string>
+    <string name="drag_to_reorder">اسحب عشان تغيّر الترتيب</string>
+    <string name="failed">فشل</string>
+    <string name="hi_res_lossless">دقة عالية بدون فقدان</string>
+    <string name="high_quality">جودة عالية</string>
+    <string name="high_quality_upgrading">جودة عالية، بيتم التحسين</string>
+    <string name="increase_lyrics_offset">تأخير الكلمات أكتر</string>
+    <string name="instrumental">موسيقى من غير غِنا</string>
+    <string name="like">إعجاب</string>
+    <string name="listen_together">اسمعوا مع بعض</string>
+    <string name="listen_together_away">بعيد دلوقتي — مكانه محفوظ</string>
+    <string name="listen_together_host">المضيف</string>
+    <string name="listen_together_in_party">في جلسة جماعية · %1$s</string>
+    <string name="listen_together_jam">%1$s بيشغّل معاك</string>
+    <string name="listen_together_jam_unnamed">بنسمع مع بعض</string>
+    <string name="listen_together_manage">إدارة</string>
+    <string name="listen_together_open">اسمعوا مع بعض</string>
+    <string name="listen_together_open_count">بنسمع مع بعض · %1$d</string>
+    <string name="listen_together_you">إنت</string>
+    <string name="mixing">بيمزج</string>
+    <string name="lossless">بدون فقدان</string>
+    <string name="lyrics_already_in_language">الكلمات دي بالفعل بـ%1$s</string>
+    <string name="lyrics_already_romanized">الكلمات دي مكتوبة بالفعل بحروف لاتينية</string>
+    <string name="lyrics_by">الكلمات لـ%1$s</string>
+    <string-array name="lyrics_intro_lines">
+        <item>الإيقاع بدأ</item>
+        <item>الأغنية بتبدأ</item>
+        <item>بنجهّز للأغنية</item>
+        <item>بنظبط المود</item>
+        <item>الجهير الأول، والكلمات بعدين</item>
+        <item>استنى بس</item>
+        <item>حاسس بالإيقاع وهو بيعلى؟</item>
+        <item>دلوقتي الإيقاع لوحده</item>
+        <item>اللازمة جاية</item>
+        <item>سيب الأغنية تاخد راحتها</item>
+        <item>يلا نسمع صوت المغني</item>
+        <item>أول نغمة بدأت</item>
+    </string-array>
+    <string-array name="lyrics_loading_lines">
+        <item>بنجيب كلمات الأغنية</item>
+        <item>بندور على الكلمات</item>
+        <item>بنحمّل مقاطع الأغنية</item>
+        <item>كلمات الأغنية بتتحمّل</item>
+        <item>بنراجع كلمات الأغنية</item>
+        <item>بندور في مكتبة الأغاني</item>
+        <item>بنظبط توقيت الكلمات</item>
+        <item>الكلمات جاية في السكة</item>
+        <item>بندور في الأرشيف</item>
+        <item>بنلاقي الكلمات الصح</item>
+        <item>الكلمات بتجهز</item>
+        <item>فاضل شوية ونلاقي الكلمات</item>
+    </string-array>
+    <string name="lyrics_not_available">الكلمات مش متاحة</string>
+    <string name="lyrics_offset">توقيت الكلمات</string>
+    <string name="lyrics_offset_description">القيم الموجبة بتأخّر ظهور الكلمات</string>
+    <string name="lyrics_offset_reset">إعادة ضبط</string>
+    <string name="lyrics_provider_current">المصدر الحالي</string>
+    <string name="lyrics_provider_fetching">بيتم تحميل الكلمات…</string>
+    <string name="lyrics_provider_found">لقينا الكلمات · اضغط لاستخدامها</string>
+    <string name="lyrics_provider_not_fetched">اضغط للتحميل</string>
+    <string name="lyrics_provider_not_found">ملقيناش كلمات</string>
+    <string name="lyrics_romanization_unavailable">النطق بالحروف اللاتينية مش متاح للكلمات دي</string>
+    <string name="lyrics_romanized">النطق بالحروف اللاتينية</string>
+    <string name="lyrics_saved_with_download">الكلمات اتحفظت مع الأغنية دي</string>
+    <string name="lyrics_share_pick_limit">الكارت مليان</string>
+    <string name="lyrics_translated_to">اتترجمت لـ%1$s</string>
+    <string name="lyrics_translation_unavailable">الترجمة مش متاحة دلوقتي</string>
+    <string name="medium_quality">جودة متوسطة</string>
+    <string name="mono">أحادي</string>
+    <string name="more">المزيد</string>
+    <string name="next_from">اللي بعده من: %1$s</string>
+    <string name="next_in_queue">التالي في قائمة الانتظار</string>
+    <string name="no_lyrics_for_track">مفيش كلمات للأغنية دي</string>
+    <string name="no_lyrics_found">ملقيناش كلمات</string>
+    <string name="now_playing">بيشتغل دلوقتي</string>
+    <string name="previously_played">اتشغّل قبل كده</string>
+    <string name="open_lyrics">الكلمات</string>
+    <string name="pause">إيقاف مؤقت</string>
+    <string name="play">تشغيل</string>
+    <string name="played_by">شغّلها %1$s</string>
+    <string name="playing_from">شغّالة من %1$s</string>
+    <string name="playing_radio">راديو %1$s شغّال</string>
+    <string name="queue">قائمة الانتظار</string>
+    <string name="remove_from_liked">إزالة من الأغاني اللي عجبتك</string>
+    <string name="add_to_queue">إضافة لقائمة الانتظار</string>
+    <string name="remove_from_queue">إزالة من قائمة الانتظار</string>
+    <string name="repeat_all">تكرار الكل</string>
+    <string name="repeat_off">التكرار متوقف</string>
+    <string name="repeat_one">تكرار الأغنية</string>
+    <string name="romanize_lyrics">كتابة الكلمات بحروف لاتينية</string>
+    <string name="romanizing_lyrics">بيتم تحويل الكلمات لحروف لاتينية…</string>
+    <string name="show_original_lyrics">عرض الكلمات الأصلية</string>
+    <string name="shuffle_off">التشغيل العشوائي متوقف</string>
+    <string name="shuffle_on">التشغيل العشوائي شغّال</string>
+    <string name="stereo">ستيريو</string>
+    <string name="translate_lyrics">ترجمة الكلمات</string>
+    <string name="translating_lyrics_to">بيتم الترجمة لـ%1$s…</string>
+    <string name="up_next">التالي</string>
+    <string name="upgrading_quality">بيتم تحسين الجودة</string>
+    <string name="waiting">مستني</string>
+    <string name="widget_next">التالي</string>
+    <string name="widget_previous">السابق</string>
+    <string name="wired_headphones">سماعات بسلك</string>
+    <string name="usb_audio">صوت USB</string>
+    <string name="hdmi_output">HDMI</string>
+    <string name="personal_phone">موبايل %1$s</string>
+    <string name="this_phone">الموبايل ده</string>
+    <string name="albums">الألبومات</string>
+    <string name="artists">الفنانين</string>
+    <string name="card_plays_format">%1$s تشغيل</string>
+    <string name="card_songs_format">%1$s أغنية</string>
+    <string name="card_views_format">%1$s مشاهدة</string>
+    <string name="clear_search">مسح البحث</string>
+    <string name="downloaded">تم التنزيل</string>
+    <string name="explore">استكشاف</string>
+    <string name="library">المكتبة</string>
+    <string name="library_sign_in_description">سجّل دخول بحساب Google عشان تشوف الأغاني اللي عجبتك وقوائم التشغيل وسجل YouTube Music.</string>
+    <string name="new_playlist">قائمة تشغيل جديدة</string>
+    <string name="on_device">على الجهاز</string>
+    <string name="personalized_recommendations">احصل على اقتراحات مناسبة لذوقك</string>
+    <string name="pinned">مثبّت</string>
+    <string name="play_next">تشغيل بعد دي</string>
+    <string name="playlist">قائمة تشغيل</string>
+    <string name="playlist_action">قائمة تشغيل</string>
+    <string name="playlists">قوائم التشغيل</string>
+    <string name="recent_search_edit">تعديل “%1$s”</string>
+    <string name="recent_search_remove">إزالة “%1$s” من عمليات البحث الأخيرة</string>
+    <string name="recent_searches">عمليات البحث الأخيرة</string>
+    <string name="replay_subtitle">أكتر أغاني وفنانين وألبومات وأنواع موسيقى سمعتهم</string>
+    <string name="retry">جرّب تاني</string>
+    <string name="saved_to_youtube_music">اتحفظت على YouTube Music</string>
+    <string name="search">بحث</string>
+    <string name="search_empty">دوّر على ملايين الأغاني على YouTube Music.</string>
+    <string name="search_hint">فنانين، أغاني، كلمات وأكتر</string>
+    <string name="search_library_empty">دوّر على الأغاني في مجلد الموسيقى على جهازك.</string>
+    <string name="search_library_hint">أغاني، فنانين وألبومات</string>
+    <string name="search_addons_hint">ابحث في الإضافات</string>
+    <string name="search_addons_empty">ابحث في كل الإضافات المفعّلة مرة واحدة. الأغاني بتشتغل من الإضافة مباشرة.</string>
+    <string name="search_addons_no_results">مفيش إضافة فيها “%1$s”.</string>
+    <string name="search_library_no_results">مفيش حاجة في الموسيقى على جهازك مطابقة لـ“%1$s”.</string>
+    <string name="selected">تم الاختيار</string>
+    <string name="share">مشاركة</string>
+    <string name="shelf_artists_on_the_rise">فنانين صاعدين</string>
+    <string name="shelf_chart">قائمة أغاني</string>
+    <string name="shelf_charts">قوائم الأغاني</string>
+    <string name="shelf_concerts">حفلات</string>
+    <string name="shelf_featured_playlists_for_you">قوائم تشغيل مختارة ليك</string>
+    <string name="shelf_for_you">عشانك</string>
+    <string name="shelf_forgotten_favorites">أغانيك المفضلة اللي نسيتها</string>
+    <string name="shelf_from_the_community">من المجتمع</string>
+    <string name="shelf_from_your_library">من مكتبتك</string>
+    <string name="shelf_hits_today">أغاني ناجحة النهارده</string>
+    <string name="shelf_listen_again">اسمع تاني</string>
+    <string name="shelf_mixed_for_you">مزيكا متظبطة على ذوقك</string>
+    <string name="shelf_new_releases">إصدارات جديدة</string>
+    <string name="shelf_quick_picks">اختيارات سريعة</string>
+    <string name="shelf_recents">الأخيرة</string>
+    <string name="shelf_recommended_music_videos">فيديوهات أغاني مقترحة</string>
+    <string name="shelf_shorts">مقاطع قصيرة</string>
+    <string name="shelf_similar_to">أغاني شبه %1$s</string>
+    <string name="shelf_single">أغنية منفردة</string>
+    <string name="shelf_song_item">أغنية</string>
+    <string name="shelf_top_music_videos">أشهر فيديوهات الأغاني</string>
+    <string name="shelf_top_tunes_right_now">أشهر الأغاني دلوقتي</string>
+    <string name="shelf_trending">الرائج</string>
+    <string name="shelf_trending_community_playlists">قوائم تشغيل رائجة من المجتمع</string>
+    <string name="shelf_youtube_charts">قوائم YouTube للأغاني</string>
+    <string name="show_all">عرض الكل</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="sign_in_youtube_music">تسجيل الدخول إلى YouTube Music</string>
+    <string name="subscriptions">الاشتراكات</string>
+    <string name="your_replay">Replay بتاعك</string>
+    <string name="your_listening_experience">تجربتك في الاستماع</string>
+    <string name="default_replay_holder">مستمع على TUNE 13</string>
+    <string name="member_since">عضو من</string>
+    <string name="import_spotify">استيراد من Spotify</string>
+    <string name="import_spotify_subtitle">من رابط قائمة تشغيل</string>
+    <string name="sign_in_with_google">تسجيل الدخول بحساب Google</string>
+    <string name="top_picks_for_you">اختيارات مميزة ليك</string>
+    <string name="top_pick_made_for_you">متظبط على ذوقك</string>
+    <string name="mixes_yours">المزيكا بتاعتك</string>
+    <string name="mixes_none">لسه مفيش قوائم مزيكا. كمّل سماع وYouTube Music هيعملك قوائم على ذوقك.</string>
+    <string name="top_pick_mood_for_you">مودك</string>
+    <string name="top_pick_featuring">فيها %1$s</string>
+    <string name="top_pick_and_similar">%1$s وفنانين شبهه</string>
+    <string name="top_pick_named_station">راديو %1$s</string>
+    <string name="top_pick_your_station">الراديو بتاعك</string>
+    <string name="top_pick_discovery_station">راديو لاكتشاف مزيكا جديدة</string>
+    <string name="top_pick_new_from">جديد من %1$s</string>
+    <string name="mood_energy">نشاط</string>
+    <string name="mood_energy_line">أغاني حماسية تخلّيك متحرك طول الوقت.</string>
+    <string name="mood_relax">استرخاء</string>
+    <string name="mood_relax_line">نغمات هادية تساعدك تفصل شوية.</string>
+    <string name="mood_feeling_blue">مود حزين</string>
+    <string name="mood_feeling_blue_line">أغاني حزينة وقت ما تحتاجها.</string>
+    <string name="mood_feel_good">مود حلو</string>
+    <string name="mood_feel_good_line">أغاني مبهجة تظبط يومك.</string>
+    <string name="mood_focus">تركيز</string>
+    <string name="mood_focus_line">مزيكا هادية تساعدك تركز.</string>
+    <string name="mood_heartbreak">وجع القلب</string>
+    <string name="mood_heartbreak_line">أغاني فراق تفضفض بيها.</string>
+    <string name="mood_love">حب</string>
+    <string name="mood_love_line">أغاني رومانسية على المود.</string>
+    <string name="find_your_mood">اختار مودك</string>
+    <string name="mood_after_hours">آخر الليل</string>
+    <string name="mood_after_hours_line">إيقاعات لآخر الليل لما الدنيا تهدى.</string>
+    <string name="mood_alone_time">وقت لنفسك</string>
+    <string name="mood_alone_time_line">أغاني هادية لوقتك لوحدك.</string>
+    <string name="mood_chill">رايق</string>
+    <string name="mood_chill_line">نغمات هادية تساعدك تفصل.</string>
+    <string name="mood_commuting">في الطريق</string>
+    <string name="mood_commuting_line">المزيكا المناسبة لمشوارك.</string>
+    <string name="mood_eating_cooking">أكل وطبخ</string>
+    <string name="mood_eating_cooking_line">مزيكا دافية وخفيفة للمطبخ والسفرة.</string>
+    <string name="mood_evening">المسا</string>
+    <string name="mood_evening_line">أغاني هادية تختم بيها يومك.</string>
+    <string name="mood_fitness">رياضة</string>
+    <string name="mood_fitness_line">أغاني حماسية تديك طاقة أكتر.</string>
+    <string name="mood_gaming">ألعاب</string>
+    <string name="mood_gaming_line">مزيكا تخليك تعيش جو اللعبة.</string>
+    <string name="mood_home">في البيت</string>
+    <string name="mood_home_line">مزيكا رايقة ليوم هادي في البيت.</string>
+    <string name="mood_morning">الصبح</string>
+    <string name="mood_morning_line">أغاني تفتح نفسك على يوم جديد.</string>
+    <string name="mood_motivation">حماس</string>
+    <string name="mood_motivation_line">أغاني تقومك وتديك دفعة.</string>
+    <string name="mood_outdoors">في الهوا الطلق</string>
+    <string name="mood_outdoors_line">مزيكا للهواء النضيف والطريق المفتوح.</string>
+    <string name="mood_party">حفلة</string>
+    <string name="mood_party_line">أغاني الكل يعرفها وتكمّل بيها السهرة.</string>
+    <string name="mood_sleep">نوم</string>
+    <string name="mood_sleep_line">نغمات هادية تساعدك تنام.</string>
+    <string name="mood_social">مع صحابك</string>
+    <string name="mood_social_line">أغاني كل اللي قاعدين هيعرفوها.</string>
+    <string name="mood_sports">رياضة</string>
+    <string name="mood_sports_line">حماس يوم الماتش من أوله لآخره.</string>
+    <string name="mood_summertime">أجواء الصيف</string>
+    <string name="mood_summertime_line">أغاني صيفية لأيام طويلة ودافية.</string>
+    <string name="mood_holiday">أعياد ومناسبات</string>
+    <string name="mood_holiday_line">أغاني احتفالية للموسم.</string>
+    <string name="mood_weekend">الويك إند</string>
+    <string name="mood_weekend_line">مزيكا تروق عليك في الإجازة.</string>
+    <string name="mood_wellbeing">راحة نفسية</string>
+    <string name="mood_wellbeing_line">مزيكا هادية للتأمل واليوجا.</string>
+    <string name="mood_work">شغل</string>
+    <string name="mood_work_line">مزيكا هادية من غير كلام تساعدك تخلّص شغلك.</string>
+    <string name="video_quality">جودة الفيديو</string>
+    <string name="video_quality_auto">تلقائي</string>
+    <string name="mix_view_bars">%1$d مازورة</string>
+    <string name="mix_view_one_bar">مازورة واحدة</string>
+    <string name="mix_view_seconds">%1$d ثانية</string>
+    <string name="mix_view_bpm">%1$d نبضة في الدقيقة</string>
+    <string name="automix_overview_unavailable">مفيش انتقال Automix قريب</string>
+    <string name="queue_selected_count">تم اختيار %1$d</string>
+    <string name="queue_select_all">اختيار الكل</string>
+    <string name="queue_select">اختيار</string>
+    <string name="queue_close_selection">إغلاق وضع الاختيار</string>
+    <string name="queue_add_to_playlist">قائمة تشغيل</string>
+    <string name="queue_download">تنزيل</string>
+    <string name="queue_selection_remove">إزالة</string>
+    <string name="queue_add_all_to_playlist">إضافة الكل لقائمة تشغيل</string>
+</resources>

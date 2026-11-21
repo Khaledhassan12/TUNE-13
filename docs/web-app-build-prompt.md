@@ -1,6 +1,6 @@
-# Build BitChord Web: a React + Vite web player with a companion browser extension
+# Build Tune 13 Web: a React + Vite web player with a companion browser extension
 
-You are building the web version of BitChord, an existing Android/desktop music player whose code is in this repository. The web app streams from YouTube Music and from user-added HTTP addons, has Listen Together and Replay, and has YouTube Music, Spotify and Discord integrations. A companion browser extension does the networking and sign-in work that a web page isn't allowed to do. The UI replicates the Apple Music web player (music.apple.com).
+You are building the web version of Tune 13, an existing Android/desktop music player whose code is in this repository. The web app streams from YouTube Music and from user-added HTTP addons, has Listen Together and Replay, and has YouTube Music, Spotify and Discord integrations. A companion browser extension does the networking and sign-in work that a web page isn't allowed to do. The UI replicates the Apple Music web player (music.apple.com).
 
 This document records decisions that were already made. Don't reopen them; where something is genuinely undecided, it says so.
 
@@ -45,7 +45,7 @@ This document records decisions that were already made. Don't reopen them; where
 | Playback | **Shaka Player** for YouTube (SABR) and for DASH-manifest addon streams. A plain `<audio>` element for progressive addon URLs. Route both through one Web Audio graph for volume, crossfade and EQ (section 5.5). |
 | Hosting | Static build on Vercel or Cloudflare Pages (free). |
 | Backend | **None for streaming.** The only server is the existing Go Listen Together server (section 8). |
-| Extension | One Manifest V3 codebase built for Chromium (Chrome, Edge, Brave) and Firefox (section 4). |
+| Extension | One Manifest V3 codebase built for Chromium (Chrome, Edge, Brave) and Firefox (section 4). | 
 
 ### Compute budget (a hard constraint)
 
@@ -192,7 +192,7 @@ Use Manifest V3 and build with WXT (or a Vite-based MV3 setup) to get Chrome and
   - It also runs desktop users through an extension. Read how its extension and page cooperate, and reuse the approach.
   - The old YouTube.js browser example (dash.js + `toDash`) is marked outdated. Don't start from it.
 - **BgUtils** (https://github.com/LuanRT/BgUtils, npm `bgutils-js`): generates bot-check tokens (PO tokens) by running Google's BotGuard script. Generate tokens in the page or extension context: the user's real browser is where BotGuard expects to run.
-- **BitChord's own Kotlin implementation.** It's the behavioural reference for which client to use, what to retry, and when to fall back:
+- **Tune 13's own Kotlin implementation.** It's the behavioural reference for which client to use, what to retry, and when to fall back:
   - `shared/src/jvmSharedMain/kotlin/com/music/bitchord/data/innertube/StreamResolver.kt`
   - `…/innertube/InnerTubeXResolver.kt`: client catalog and cipher tiers, from the InnerTubeX library that the vivi app also uses.
   - `…/innertube/PlayerClient.kt`

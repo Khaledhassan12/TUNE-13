@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:label="BitChord Dev"
+        android:label="TUNE 13"
         android:usesCleartextTraffic="true"
         tools:replace="android:label,android:usesCleartextTraffic" />
 </manifest>

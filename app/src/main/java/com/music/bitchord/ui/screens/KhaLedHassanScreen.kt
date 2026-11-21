@@ -52,12 +52,13 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -65,6 +66,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import coil3.compose.rememberAsyncImagePainter
+import com.music.bitchord.R as AppR
 import com.music.bitchord.data.settings.AppSettings
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.collect
@@ -75,12 +77,6 @@ private const val WHATSAPP_URL = "https://wa.me/201119523317"
 private const val FACEBOOK_URL = "https://www.facebook.com/Khaledabdulsadiq12"
 private const val GITHUB_URL = "https://github.com/Khaledhassan12"
 
-/**
- * Personal profile, opened only from Settings > Kha Led Hassan.
- *
- * Uses the app's live Material theme and typography, and deliberately contains
- * no duplicated project-origin or third-party ownership notice.
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun KhaLedHassanScreen(
@@ -123,21 +119,19 @@ fun KhaLedHassanScreen(
                     .height(heroHeight),
                 contentAlignment = Alignment.Center,
             ) {
-                // The same portrait is softly diffused behind the clear image.
-                // Its face remains unobscured because the sharp layer is drawn
-                // above this halo rather than applying blur to the portrait.
+
                 AsyncImage(
-                    model = "file:///android_asset/khaledhassan.png",
+                    model = "file:///android_asset/button_logo.png",
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxSize()
-                        .blur(30.dp)
+                        .blur(45.dp)
                         .graphicsLayer { alpha = 0.34f },
                 )
                 AsyncImage(
-                    model = "file:///android_asset/khaledhassan.png",
-                    contentDescription = "Khaled Hassan",
+                    model = "file:///android_asset/button_logo.png",
+                    contentDescription = "Khaled Hassan 13",
                     contentScale = ContentScale.Fit,
                     modifier = Modifier
                         .fillMaxSize()
@@ -145,7 +139,7 @@ fun KhaLedHassanScreen(
                         .shadow(22.dp, RoundedCornerShape(26.dp), clip = false)
                         .clip(RoundedCornerShape(26.dp)),
                 )
-                // Soft edge-to-edge shading ties the cover into either theme.
+
                 Box(
                     Modifier
                         .fillMaxSize()
@@ -176,7 +170,7 @@ fun KhaLedHassanScreen(
 
         ProfileReveal(delayMillis = 100, reduceAnimations = reduceAnimations) {
             Text(
-                text = "Kha Led Hassan",
+                text = "Kha Led Hassan 13",
                 style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.onBackground,
@@ -186,7 +180,7 @@ fun KhaLedHassanScreen(
 
         ProfileReveal(delayMillis = 190, reduceAnimations = reduceAnimations) {
             Text(
-                text = "Android Developer  •  Music Producer",
+                text = stringResource(AppR.string.profile_job_title),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
@@ -196,7 +190,7 @@ fun KhaLedHassanScreen(
 
         ProfileReveal(delayMillis = 280, reduceAnimations = reduceAnimations) {
             Text(
-                text = "CONTACT",
+                text = stringResource(AppR.string.contact),
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 letterSpacing = 1.6.sp,
@@ -215,7 +209,7 @@ fun KhaLedHassanScreen(
                 Column {
                     ContactRow(
                         icon = { ProfileContactIcon("profile_email.svg") },
-                        title = "Email",
+                        title = stringResource(AppR.string.email),
                         detail = CONTACT_EMAIL,
                         onClick = {
                             launchContactIntent(
@@ -245,7 +239,7 @@ fun KhaLedHassanScreen(
                     ContactDivider()
                     ContactRow(
                         icon = { ProfileContactIcon("profile_github.svg") },
-                        title = "GitHub",
+                        title = "Github",
                         detail = "github.com/Khaledhassan12",
                         onClick = {
                             launchContactIntent(
@@ -257,8 +251,8 @@ fun KhaLedHassanScreen(
                     ContactDivider()
                     ContactRow(
                         icon = { ProfileContactIcon("profile_message.svg") },
-                        title = "Direct messages or call",
-                        detail = "Message or call me directly",
+                        title = stringResource(AppR.string.direct_messages_or_call),
+                        detail = stringResource(AppR.string.message_or_call_directly),
                         onClick = { showDirectActions = true },
                     )
                 }
@@ -277,13 +271,13 @@ fun KhaLedHassanScreen(
                 Icon(Icons.Rounded.PlayArrow, contentDescription = null)
                 Spacer(Modifier.width(9.dp))
                 Text(
-                    text = "Start Tune 13",
+                    text = stringResource(AppR.string.start_tune_13),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
                 )
             }
             Text(
-                text = "Listen to your favorite world",
+                text = stringResource(AppR.string.listen_to_your_favorite_world),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
@@ -307,14 +301,14 @@ fun KhaLedHassanScreen(
                     .padding(bottom = 28.dp),
             ) {
                 Text(
-                    text = "Contact directly",
+                    text = stringResource(AppR.string.contact_directly),
                     style = MaterialTheme.typography.titleLarge,
                     color = MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.padding(bottom = 14.dp),
                 )
                 ContactRow(
                     icon = { ProfileContactIcon("profile_sms.svg") },
-                    title = "Send a text message",
+                    title = stringResource(AppR.string.send_text_message),
                     detail = CONTACT_PHONE,
                     onClick = {
                         showDirectActions = false
@@ -327,7 +321,7 @@ fun KhaLedHassanScreen(
                 ContactDivider()
                 ContactRow(
                     icon = { ProfileContactIcon("profile_call.svg") },
-                    title = "Call",
+                    title = stringResource(AppR.string.call),
                     detail = CONTACT_PHONE,
                     onClick = {
                         showDirectActions = false
@@ -445,8 +439,8 @@ private fun launchContactIntent(context: Context, intent: Intent) {
     try {
         context.startActivity(intent)
     } catch (_: ActivityNotFoundException) {
-        Toast.makeText(context, "No compatible app found for this action.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(AppR.string.no_compatible_app_found), Toast.LENGTH_SHORT).show()
     } catch (_: SecurityException) {
-        Toast.makeText(context, "This action is not available on this device.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(AppR.string.action_unavailable_on_device), Toast.LENGTH_SHORT).show()
     }
 }

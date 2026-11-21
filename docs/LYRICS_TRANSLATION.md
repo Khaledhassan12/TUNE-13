@@ -2,7 +2,7 @@
 
 ## Overview
 
-BitChord can translate the currently displayed lyrics into the language selected
+Tune 13 can translate the currently displayed lyrics into the language selected
 inside the app. The translation keeps the original lyric timestamps, scroll
 position, line activation and playback-driven highlighting. A compact button in
 the full lyrics view switches between the original and translated versions.
@@ -14,7 +14,7 @@ change Automix, playback transitions, source replacement or audio processing.
 
 1. Open the full lyrics view.
 2. Tap the translation button beside the source credit.
-3. BitChord resolves the active application locale and requests a translation.
+3. Tune 13 resolves the active application locale and requests a translation.
 4. If the detected source language matches the app language, the original lyrics
    remain visible and BitChord explains that no translation is needed.
 5. Otherwise, the translated text appears with a short particle transition.
@@ -92,7 +92,7 @@ recompose, rescale or clip the lyrics list on every frame. Soft halos use two
 circles rather than extra blur layers; particles fade in and out continuously.
 
 The effect only animates draw properties and does not intercept touches.
-Enabling BitChord's **Reduce animations** preference turns it into an immediate
+Enabling Tune 13's **Reduce animations** preference turns it into an immediate
 text swap. Compose's animator respects the platform duration scale. Going into
 the background cancels decoration, and returning or reopening the panel does
 not replay an old toggle. Rapid toggles replace the previous animation.
@@ -129,20 +129,20 @@ settings.
 - `app/src/main/java/com/music/bitchord/ui/player/NowPlayingScreen.kt`
   contains the toggle, state handling and motion response.
 - `app/src/main/res/values-*/strings.xml` localizes the new UI messages for every
-  language currently offered by BitChord.
+  language currently offered by Tune 13.
 
 ## Manual verification checklist
 
-- Translate English lyrics with BitChord set to Spanish.
+- Translate English lyrics with Tune 13 set to Spanish.
 - Translate the same song again and verify the cached response is immediate.
 - Switch back and forth without losing the active line or scroll position.
 - Check held notes, vocal pauses and two-line phrases: the translated sweep
   should follow the source progress without reversing near a line wrap.
 - Toggle repeatedly, close/reopen the panel, and background/restore the app;
   particles should settle completely and old transitions should not replay.
-- Use Spanish lyrics while BitChord is set to Spanish and verify no translation
+- Use Spanish lyrics while Tune 13 is set to Spanish and verify no translation
   view is created.
-- Change BitChord to another supported language and verify the new destination.
+- Change Tune 13 to another supported language and verify the new destination.
 - Change tracks while a translation is loading and verify no stale text appears.
 - Enable **Reduce animations** and verify the particle transition is skipped.
 - Clear the app cache and verify original lyrics continue to work normally.

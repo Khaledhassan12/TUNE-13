@@ -7,19 +7,28 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.music.bitchord.data.model.Song
 import com.music.bitchord.data.model.UiState
 import com.music.bitchord.data.model.playingRowMatcher
+import com.music.bitchord.data.settings.LibrarySort
+import com.music.bitchord.ui.AppUi
+import com.music.bitchord.ui.AppUiHost
 import com.music.bitchord.ui.components.MessageState
 import com.music.bitchord.ui.components.ROW_DIVIDER_INSET
 import com.music.bitchord.ui.components.SongRow
 import com.music.bitchord.ui.components.songListSkeleton
+import com.music.bitchord.ui.theme.BitChordTheme
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 /**
  * What the account has been listening to, most recent first.
@@ -98,3 +107,55 @@ private fun androidx.compose.foundation.lazy.LazyListScope.itemsIndexed(
     count = songs.size,
     key = { "${songs[it].videoId}:$it" },
 ) { index -> row(index, songs[index]) }
+
+private val sampleHistorySongs = listOf(
+    Song(
+        videoId = "song_1",
+        title = "Midnight City",
+        artist = "M83",
+        thumbnailUrl = null,
+        durationText = "4:03",
+    ),
+    Song(
+        videoId = "song_2",
+        title = "Starboy",
+        artist = "The Weeknd, Daft Punk",
+        thumbnailUrl = null,
+        durationText = "3:50",
+    ),
+    Song(
+        videoId = "song_3",
+        title = "Get Lucky",
+        artist = "Daft Punk, Pharrell Williams",
+        thumbnailUrl = null,
+        durationText = "4:08",
+    ),
+)
+
+@Preview(showBackground = true)
+@Composable
+private fun HistoryScreenPreview() {
+    if (LocalInspectionMode.current) {
+        AppUi.install(object : AppUiHost {
+            override val swipeToPlayNext: StateFlow<Boolean> = MutableStateFlow(false)
+            override val pinnedPlaylists: StateFlow<List<String>> = MutableStateFlow(emptyList())
+            override val librarySort: StateFlow<LibrarySort> = MutableStateFlow(LibrarySort.DEFAULT)
+            @Composable
+            override fun downloadedIds(): Set<String> = emptySet()
+        })
+    }
+    BitChordTheme {
+        HistoryScreen(
+            state = UiState.Success(sampleHistorySongs),
+            listState = rememberLazyListState(),
+            onSongClick = { _, _ -> },
+            onSongLongPress = {},
+            onSongSwipe = {},
+            onRetry = {},
+            contentPadding = PaddingValues(0.dp),
+            currentSong = sampleHistorySongs.firstOrNull(),
+            isPlaying = true,
+        )
+    }
+}
+

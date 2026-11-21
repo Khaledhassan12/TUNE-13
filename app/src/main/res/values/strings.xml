@@ -239,6 +239,7 @@
     <string name="tester_code_saved" translatable="false">Tester code saved</string>
     <string name="tester_code_removed" translatable="false">Tester code removed</string>
     <string name="english">English</string>
+    <string name="arabic_egypt">Arabic</string>
     <string name="spanish">Spanish</string>
     <string name="french">French</string>
     <string name="german">German</string>
@@ -1501,4 +1502,22 @@
     <string name="replay_year_summary_minutes">Minutes listened</string>
     <string name="replay_year_mute">Mute the story</string>
     <string name="replay_year_unmute">Unmute the story</string>
+    <string name="profile_job_title">Android Developer • Music Producer</string>
+    <string name="contact">Contact</string>
+    <string name="email">Email</string>
+    <string name="direct_messages_or_call">Direct messages or call</string>
+    <string name="message_or_call_directly">Message or call me directly</string>
+    <string name="start_tune_13">Start TUNE 13</string>
+    <string name="listen_to_your_favorite_world">Listen to your favorite world</string>
+    <string name="contact_directly">Contact directly</string>
+    <string name="send_text_message">Send a text message</string>
+    <string name="call">Call</string>
+    <string name="no_compatible_app_found">No compatible app found for this action.</string>
+    <string name="action_unavailable_on_device">This action is not available on this device.</string>
+    <string name="looking_up_channels">Looking up your channels…</string>
+    <string name="account_channels_unavailable">Couldn’t list this account’s channels. You can still pick one in YouTube Music itself.</string>
+    <string name="channel_library_description">Your library, likes and history come from the channel you pick here.</string>
+    <string name="choose_in_youtube_music">Choose in YouTube Music</string>
+    <string name="brand_channel">Brand channel</string>
+    <string name="your_channel">Your channel</string>
 </resources>
